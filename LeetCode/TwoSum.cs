@@ -1,28 +1,31 @@
-public static class TwoSum
+namespace LeetCode
 {
-    public static int[] Calculate(int[] nums, int target)
+    public static class TwoSum
     {
-        Dictionary<int, int> nums_dict = new Dictionary<int, int>();
-
-        for (int i = 0; i < nums.Length; i++)
+        public static int[] Calculate(int[] nums, int target)
         {
-            var diff = target - nums[i];
+            Dictionary<int, int> numsDict = [];
 
-            if (nums_dict.ContainsKey(diff))
+            for (int i = 0; i < nums.Length; i++)
             {
-                return [nums_dict[diff], i];
-            }
+                var diff = target - nums[i];
 
-            if (!nums_dict.TryAdd(nums[i], i))
-            {
-                if (nums[i] * 2 == target)
+                if (numsDict.ContainsKey(diff))
                 {
-                    return [nums_dict[nums[i]], i];
+                    return [numsDict[diff], i];
                 }
+
+                if (!numsDict.TryAdd(nums[i], i))
+                {
+                    if (nums[i] * 2 == target)
+                    {
+                        return [numsDict[nums[i]], i];
+                    }
+                }
+
             }
 
+            return [];
         }
-
-        return [];
     }
 }

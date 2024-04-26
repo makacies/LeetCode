@@ -1,23 +1,26 @@
-public static class ValidParantheses
+namespace LeetCode
 {
-    public static bool IsValid(string s)
+    public static class ValidParantheses
     {
-        var closedParantheses = new Dictionary<char, char>() { { ')', '(' }, { '}', '{' }, { ']', '[' } };
-        var stack = new Stack<char>();
-
-        foreach (char c in s)
+        public static bool IsValid(string s)
         {
-            if (closedParantheses.TryGetValue(c, out var open))
+            var closedParantheses = new Dictionary<char, char>() { { ')', '(' }, { '}', '{' }, { ']', '[' } };
+            var stack = new Stack<char>();
+
+            foreach (char c in s)
             {
-                if (stack.TryPeek(out var latest))
+                if (closedParantheses.TryGetValue(c, out var open))
                 {
-                    if (latest == open) stack.Peek();
+                    if (stack.TryPeek(out var latest))
+                    {
+                        if (latest == open) stack.Peek();
+                        else return false;
+                    }
                     else return false;
                 }
-                else return false;
+                else stack.Push(c);
             }
-            else stack.Push(c);
+            return true;
         }
-        return true;
     }
 }
