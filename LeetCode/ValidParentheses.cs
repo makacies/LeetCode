@@ -11,16 +11,17 @@ namespace LeetCode
             {
                 if (closedParantheses.TryGetValue(c, out var open))
                 {
-                    if (stack.TryPeek(out var latest))
+                    if (stack.TryPop(out var latest))
                     {
-                        if (latest == open) stack.Peek();
-                        else return false;
+                        if (latest != open) return false;
                     }
                     else return false;
                 }
                 else stack.Push(c);
             }
-            return true;
+
+            if (stack.Count == 0) return true;
+            else return false;
         }
     }
 }
