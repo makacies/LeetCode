@@ -1,15 +1,15 @@
 namespace LeetCode
 {
-    public static class ValidParantheses
+    public static class ValidParentheses
     {
         public static bool IsValid(string s)
         {
-            var closedParantheses = new Dictionary<char, char>() { { ')', '(' }, { '}', '{' }, { ']', '[' } };
+            var closedParentheses = new Dictionary<char, char>() { { ')', '(' }, { '}', '{' }, { ']', '[' } };
             var stack = new Stack<char>();
 
             foreach (char c in s)
             {
-                if (closedParantheses.TryGetValue(c, out var open))
+                if (closedParentheses.TryGetValue(c, out var open))
                 {
                     if (stack.TryPop(out var latest))
                     {
@@ -20,8 +20,7 @@ namespace LeetCode
                 else stack.Push(c);
             }
 
-            if (stack.Count == 0) return true;
-            else return false;
+            return stack.Count == 0;
         }
     }
 }

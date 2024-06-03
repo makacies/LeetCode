@@ -10,9 +10,9 @@ namespace LeetCode
             {
                 var diff = target - nums[i];
 
-                if (numsDict.ContainsKey(diff))
+                if (numsDict.TryGetValue(diff, out var value))
                 {
-                    return [numsDict[diff], i];
+                    return [value, i];
                 }
 
                 if (!numsDict.TryAdd(nums[i], i))
