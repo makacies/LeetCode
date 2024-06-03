@@ -1,4 +1,6 @@
-﻿namespace LeetCode;
+﻿// 21. Merge Two Sorted Lists
+
+namespace LeetCode;
 
 public class LinkedList
 {
@@ -7,7 +9,7 @@ public class LinkedList
         var tail = new ListNode();
         var head = tail;
 
-        while (!(list1 == null && list2 == null))
+        while (list1 != null || list2 != null)
         {
             tail.next = new ListNode();
             tail = tail.next;
