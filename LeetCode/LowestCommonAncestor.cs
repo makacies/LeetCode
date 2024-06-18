@@ -12,7 +12,7 @@ namespace LeetCode
             var left = Find(root.left, p, q);
             var rigth = Find(root.right, p, q);
 
-            if (left == null || rigth == null) return root;
+            if (left != null && rigth != null) return root;
 
             return left == null ? rigth : left;
         }
