@@ -17,33 +17,29 @@ namespace LeetCode
         public void Push(int x)
         {
             _stack.Push(x);
-            RewriteStacks(_stack, _stackReversed);
         }
 
         public int Pop()
         {
-            var returnValue = _stackReversed.Pop();
-            RewriteStacks(_stackReversed, _stack);
-            return returnValue;
+            if (_stackReversed.Count == 0)
+            {
+                while (_stack.Count != 0) _stackReversed.Push(_stack.Pop());
+            }
+            return _stackReversed.Pop();
         }
 
         public int Peek()
         {
+            if (_stackReversed.Count == 0)
+            {
+                while (_stack.Count != 0) _stackReversed.Push(_stack.Pop());
+            }
             return _stackReversed.Peek();
         }
 
         public bool Empty()
         {
-            return _stack.Count == 0;
-        }
-
-        private void RewriteStacks(Stack<int> original, Stack<int> reversed)
-        {
-            reversed.Clear();
-            foreach (var value in original)
-            {
-                reversed.Push(value);
-            }
+            return _stack.Count == 0 && _stackReversed.Count == 0;
         }
     }
 }
