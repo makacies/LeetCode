@@ -6,17 +6,18 @@ namespace LeetCode
     {
         internal static bool CanConstruct(string ransomNote, string magazine)
         {
-            if (magazine.Length != ransomNote.Length) return false;
+            var magazineList= magazine.ToList();
+            var counter = 0;
 
-            var magazineSorted = magazine.ToCharArray().Order().ToList();
-            var noteSorted= ransomNote.ToCharArray().Order().ToList();
-
-            for (int i = 0; i < magazineSorted.Count; i++)
+            foreach (var item in ransomNote)
             {
-                if (magazineSorted[i] != noteSorted[i]) return false;
+                if (magazineList.Remove(item))
+                {
+                    counter++;
+                }
             }
 
-            return true;
+            return counter == ransomNote.Length;
         }
     }
 }
