@@ -6,26 +6,25 @@ namespace LeetCode
     {
         internal static int Search(int[] nums, int target)
         {
-            return RecursiveSearch(nums, target, 0);
+            var startIndex = 0;
+            var endIndex = nums.Length - 1;
+            var mid = 0;
 
-            int RecursiveSearch(int[] nums, int target, int startIndex)
+            while (startIndex <= endIndex)
             {
-                if (nums.Length == 1)
+                mid = (endIndex - startIndex) / 2 + startIndex;
+                if (nums[mid] == target) return mid;
+                else if (nums[mid] < target)
                 {
-                    if (nums[0] == target) return startIndex + 0;
-                    return -1;
+                    startIndex = mid + 1;
                 }
-
-                var mid = nums.Length / 2;
-                if (nums[mid] == target)
+                else
                 {
-                    return startIndex + mid;
+                    endIndex = mid - 1;
                 }
-
-                return nums[mid] <= target
-                    ? RecursiveSearch(nums.Skip(mid).ToArray(), target, startIndex + mid)
-                    : RecursiveSearch(nums.Take(mid).ToArray(), target, startIndex);
             }
+
+            return -1;
         }
     }
 }
