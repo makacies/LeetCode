@@ -2,7 +2,7 @@
 
 using System.Text;
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal static class ValidPalindrome
     {
@@ -10,8 +10,8 @@ namespace LeetCode
         {
             if (string.IsNullOrEmpty(s)) return true;
 
-            var numerics = new[] {48, 57};
-            var letters = new[] {97, 122};
+            var numerics = new[] { 48, 57 };
+            var letters = new[] { 97, 122 };
             var input = Encoding.ASCII.GetBytes(s.ToLower());
             var start = 0;
             var end = input.Length - 1;

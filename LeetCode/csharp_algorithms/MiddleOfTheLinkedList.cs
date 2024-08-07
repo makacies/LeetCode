@@ -1,6 +1,6 @@
 ﻿// 876. Middle of the Linked List
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal static class MiddleOfTheLinkedList
     {

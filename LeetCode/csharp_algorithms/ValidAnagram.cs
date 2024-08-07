@@ -1,6 +1,6 @@
 ﻿// 242. Valid Anagram
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal static class ValidAnagram
     {

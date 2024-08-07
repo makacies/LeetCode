@@ -1,8 +1,8 @@
 ﻿// 278. First Bad Version
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
-    internal static class FirstBadVersion 
+    internal static class FirstBadVersion
     {
         public static int Find(int n)
         {

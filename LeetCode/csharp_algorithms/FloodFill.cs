@@ -1,6 +1,6 @@
 ﻿// 733. Flood Fill
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal static class FloodFill
     {
@@ -14,7 +14,7 @@ namespace LeetCode
                     pixel2 < 0 || pixel2 >= image[pixel1].Length ||
                     initImage[pixel1][pixel2] == resColor)
                     return initImage;
-                
+
                 if (initImage[pixel1][pixel2] == initColor)
                 {
                     initImage[pixel1][pixel2] = resColor;

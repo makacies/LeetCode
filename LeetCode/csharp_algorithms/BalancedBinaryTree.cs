@@ -1,6 +1,6 @@
 ﻿// 110. Balanced Binary Tree
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal static class BalancedBinaryTree
     {

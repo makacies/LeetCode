@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal class GameOfLife
     {

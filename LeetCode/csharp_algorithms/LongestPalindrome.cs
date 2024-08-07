@@ -1,6 +1,6 @@
 ﻿// 409. Longest Palindrome
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     public class LongestPalindrome
     {
@@ -21,7 +21,7 @@ namespace LeetCode
                 }
             }
 
-            return set.Count() > 0 ? ++ length : length;
+            return set.Count() > 0 ? ++length : length;
         }
     }
 }

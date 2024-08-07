@@ -1,6 +1,6 @@
 // 20. Valid Parentheses
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     public static class ValidParentheses
     {

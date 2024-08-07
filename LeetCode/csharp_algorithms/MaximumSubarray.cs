@@ -1,6 +1,6 @@
 ﻿// 53. Maximum Subarray
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal static class MaximumSubarray
     {

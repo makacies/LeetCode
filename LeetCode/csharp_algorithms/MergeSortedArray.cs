@@ -1,6 +1,6 @@
 ﻿// 88. Merge Sorted Array
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal static class MergeSortedArray
     {

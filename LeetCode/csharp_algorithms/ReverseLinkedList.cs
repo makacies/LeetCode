@@ -1,13 +1,13 @@
 ﻿// 206.Reverse Linked List
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     public static class ReverseLinkedList
     {
         public static ListNode? ReverseList(ListNode? head)
         {
             ListNode? temp = null;
-            
+
             while (head != null)
             {
                 var next = head.next;

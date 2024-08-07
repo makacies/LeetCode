@@ -1,6 +1,6 @@
 ﻿// 104.Maximum Depth of Binary Tree
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal class MaximumDepthBinaryTree
     {

@@ -1,13 +1,13 @@
 ﻿// 543.Diameter of Binary Tree
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal class DiameterOfBinaryTree
     {
         public int Get(TreeNode root)
         {
             if (root == null) return 0;
-            
+
             var left = Get(root.left);
             var leftPath = GetLongestPath(root.left);
             var right = Get(root.right);

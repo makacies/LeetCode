@@ -1,6 +1,6 @@
 ﻿// 232. Implement Queue using Stacks
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal class MyQueue
     {

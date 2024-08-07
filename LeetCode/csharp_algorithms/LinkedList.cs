@@ -1,6 +1,6 @@
 ﻿// 21. Merge Two Sorted Lists
 
-namespace LeetCode;
+namespace LeetCode.csharp_algorithms;
 
 public class LinkedList
 {

@@ -1,6 +1,6 @@
 ﻿// 217. Contains Duplicate
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal class ContainsDuplicate
     {

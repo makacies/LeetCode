@@ -1,6 +1,6 @@
 // 1. Two Sum
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     public static class TwoSum
     {

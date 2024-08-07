@@ -1,6 +1,6 @@
 ﻿// 70. Climbing Stairs
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     public static class ClimbStairs
     {

@@ -1,6 +1,6 @@
 ﻿// 121. Best Time to Buy and Sell Stock
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal class BuyAndSellStock
     {

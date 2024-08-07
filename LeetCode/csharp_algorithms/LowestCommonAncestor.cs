@@ -1,6 +1,6 @@
 ﻿// 235. Lowest Common Ancestor of a Binary Search Tree
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal static class LowestCommonAncestor
     {

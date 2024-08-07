@@ -1,6 +1,6 @@
 ﻿// 67. Add Binary
 
-namespace LeetCode
+namespace LeetCode.csharp_algorithms
 {
     internal static class AddBinary
     {
@@ -29,7 +29,7 @@ namespace LeetCode
             }
             if (carry) result[0] = '1';
 
-           return result[0] == '\0' ? new string(result[1..]) : new string(result);
+            return result[0] == '\0' ? new string(result[1..]) : new string(result);
         }
     }
 }
