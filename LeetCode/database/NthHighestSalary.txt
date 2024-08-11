@@ -1,0 +1,18 @@
+﻿177. Nth Highest Salary
+
+CREATE FUNCTION getNthHighestSalary(@N INT) RETURNS INT AS
+BEGIN
+    if @N <= 0
+    return null;
+    RETURN (
+        SELECT 
+            DISTINCT salary 
+        FROM 
+            Employee
+        ORDER BY 
+            salary DESC
+        OFFSET 
+            @N-1 ROWS
+        FETCH NEXT 1 ROW ONLY
+    );
+END
