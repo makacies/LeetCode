@@ -1,0 +1,11 @@
+﻿185. Department Top Three Salaries
+
+with rankedsalary as (
+    select department.name as Department, employee.name as Employee, salary,
+    dense_rank() over (partition by department.name order by salary desc) as denserank
+    from employee
+    join department on department.id = employee.departmentid
+)
+select Department, Employee, salary
+from rankedsalary
+where denserank <= 3
