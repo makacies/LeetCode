@@ -1,0 +1,28 @@
+﻿196. Delete Duplicate Emails
+
+----------------------------------------------------------------------------
+Solution 1 using CTE (Common Table Expression):
+
+with rankedperson as (
+    select id, row_number() over (partition by email order by id) as rn
+    from person
+)
+delete from person
+where id in (
+    select id from rankedperson
+    where rn > 1
+)
+
+----------------------------------------------------------------------------
+Solution 2:
+
+DELETE FROM Person 
+WHERE id IN (
+    SELECT a.id
+    FROM (
+        SELECT id, email,
+               ROW_NUMBER() OVER (PARTITION BY email ORDER BY id) AS rn
+        FROM Person
+    ) a
+    WHERE a.rn > 1
+);
