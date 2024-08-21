@@ -1,0 +1,27 @@
+﻿197. Rising Temperature
+
+------------------------------------------------------------------------------------------------
+Solution 1 using CTE: 
+
+with tempcomparison as (
+    select id, temperature, lag(temperature) over (order by recordDate) as prevtemp from weather
+) 
+select id 
+from tempcomparison
+WHERE prevTemp IS NOT NULL
+  AND temperature > prevTemp;
+
+------------------------------------------------------------------------------------------------
+Solution 2 using a Subquery: 
+
+select id from (
+    select id, temperature, lag(temperature) over (order by recordDate) as prevTemp from weather
+) as subquerry
+where temperature > prevTemp
+
+------------------------------------------------------------------------------------------------
+Solution 3 using Join:
+
+select w1.id from weather w1
+join weather w2 on w1.recorddate = DATEADD(day, 1, w2.recorddate)
+where w1.temperature > w2.temperature
